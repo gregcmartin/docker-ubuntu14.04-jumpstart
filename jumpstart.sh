@@ -6,7 +6,7 @@ echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" >> /etc/apt/sou
 apt-get update
 apt-get purge lxc-docker*
 apt-cache policy docker-engine
-apt-get upgrade
+apt-get -y upgrade
 sudo apt-get install -y linux-image-generic-lts-trusty
 
 # Commands to run after reboot
