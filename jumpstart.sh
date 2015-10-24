@@ -10,11 +10,13 @@ apt-get upgrade
 sudo apt-get install -y linux-image-generic-lts-trusty
 
 # Commands to run after reboot
+rm -rf /etc/rc.local
 touch /etc/rc.local
-echo "apt-get update"
-echo "apt-get -y install docker-engine"
-echo "docker run hello-world"
-echo """rm -rf /etc/rc.local && touch /etc/rc.local && echo "exit 0" >> /etc/rc.local"""
+echo "#!/bin/sh" >> /etc/rc.local
+echo "apt-get update" >> /etc/rc.local
+echo "apt-get -y install docker-engine" >> /etc/rc.local
+echo "docker run hello-world" >> /etc/rc.local
+echo """rm -rf /etc/rc.local && touch /etc/rc.local && echo "exit 0" >> /etc/rc.local""" >> /etc/rc.local
 
 # other nice stuff to install
 apt-get install -y python-pip git
