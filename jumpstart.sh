@@ -18,6 +18,7 @@ echo "apt-get -y install docker-engine" >> /etc/rc.local
 echo "docker run hello-world" >> /etc/rc.local
 echo """rm -rf /etc/rc.local && touch /etc/rc.local && echo "exit 0" >> /etc/rc.local""" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
+chmod +x /etc/rc.local
 
 # other nice stuff to install
 apt-get install -y python-pip git
